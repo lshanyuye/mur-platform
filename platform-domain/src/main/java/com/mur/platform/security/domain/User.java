@@ -1,6 +1,8 @@
 package com.mur.platform.security.domain;
 
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mur.domain.Domain;
 import com.baomidou.mybatisplus.annotation.TableField;
 
@@ -49,6 +51,7 @@ public class User extends Domain {
     /**
      * 失效日期
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @TableField("EXPIRED_DATE")
     private Date expiredDate;
 
@@ -56,6 +59,7 @@ public class User extends Domain {
      * 密码失效日期
      */
     @TableField("CREDENTIAL_EXPIRED_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date credentialExpiredDate;
 
 

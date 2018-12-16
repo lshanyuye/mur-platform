@@ -1,6 +1,10 @@
 package com.mur.platform.security.controller;
 
 
+import com.mur.domain.web.Result;
+import com.mur.platform.security.domain.User;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +22,13 @@ import com.mur.platform.security.service.UserService;
 @RestController
 @RequestMapping("/security/user")
 public class UserController {
-  @Autowired
-  private UserService userService;
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("/")
+    public Result save(@RequestBody User user) {
+        userService.save(user, "");
+        return Result.ok("保存成功");
+    }
 }
 

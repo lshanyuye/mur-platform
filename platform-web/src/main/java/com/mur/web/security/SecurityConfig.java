@@ -1,9 +1,5 @@
 package com.mur.web.security;
 
-import com.mur.web.security.AuthFailHandler;
-import com.mur.web.security.AuthSuccessHandler;
-import com.mur.web.security.UnAuthenticationEntryPoint;
-import com.mur.web.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -23,13 +19,13 @@ import org.springframework.util.DigestUtils;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserService userService;
+    private LoginService loginService;
 
 
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService).passwordEncoder(new PasswordEncoder() {
+        auth.userDetailsService(loginService).passwordEncoder(new PasswordEncoder() {
             @Override
             public String encode(CharSequence charSequence) {
                 return DigestUtils.md5DigestAsHex(charSequence.toString().getBytes());

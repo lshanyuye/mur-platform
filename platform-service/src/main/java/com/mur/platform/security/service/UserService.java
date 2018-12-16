@@ -14,4 +14,6 @@ import com.mur.service.base.BaseService;
 public interface UserService extends BaseService<User> {
 
     void save(User user, String operator);
+
+    User findByUsername(String username);
 }
