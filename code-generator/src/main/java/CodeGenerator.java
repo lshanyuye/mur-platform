@@ -1,27 +1,21 @@
-package com.mur.mybatis;
-
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
-import com.baomidou.mybatisplus.generator.config.FileOutConfig;
-import com.baomidou.mybatisplus.generator.config.GlobalConfig;
-import com.baomidou.mybatisplus.generator.config.PackageConfig;
-import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.TemplateConfig;
+import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @ClassName CodeGenerator
@@ -32,12 +26,12 @@ import org.slf4j.LoggerFactory;
 public class CodeGenerator {
 
     private static final Logger logger = LoggerFactory.getLogger(CodeGenerator.class);
-    private static String url = "jdbc:mysql://127.0.0.1:3306/platform?useUnicode=true&amp&characterEncoding=utf8";
+    private static String url = "jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&amp&characterEncoding=utf8";
     private static String driverName = "com.mysql.jdbc.Driver";
     private static String username = "root";
     private static String passsword = "root";
-    private static String projectPath = "E:\\IdeaProjects\\platform\\";
-//    private static String projectPath = "D:/sources";
+//    private static String projectPath = "E:\\IdeaProjects\\platform\\";
+    private static String projectPath = "D:/target";
     private static String author = "Mu.R";
     private static String parentPackage = "com.mur.platform";
     private static String domainPath = "/platform-domain";

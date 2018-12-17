@@ -8,6 +8,7 @@
     <module>platform-domain</module>
     <module>platform-service</module>
     <module>platform-web</module>
+      <module>code-generator</module>
   </modules>
   <groupId>com.mur</groupId>
   <artifactId>platform</artifactId>
