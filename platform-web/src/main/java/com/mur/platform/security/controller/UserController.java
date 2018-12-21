@@ -2,7 +2,10 @@ package com.mur.platform.security.controller;
 
 
 import com.mur.domain.web.Result;
+import com.mur.domain.web.UserProfile;
 import com.mur.platform.security.domain.User;
+import com.mur.web.controller.BaseController;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +24,7 @@ import com.mur.platform.security.service.UserService;
  */
 @RestController
 @RequestMapping("/security/user")
-public class UserController {
+public class UserController extends BaseController{
     @Autowired
     private UserService userService;
 

@@ -13,4 +13,7 @@ import com.mur.service.base.BaseService;
  */
 public interface RoleService extends BaseService<Role> {
 
+    void save(Role role, String operator);
+
+    Role findByCode(String roleCode);
 }

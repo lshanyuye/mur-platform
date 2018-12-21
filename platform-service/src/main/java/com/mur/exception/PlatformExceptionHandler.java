@@ -43,47 +43,7 @@ public class PlatformExceptionHandler {
     }
 
     private ResponseEntity<ExceptionDetail> handleException(Exception e, HttpServletRequest request, String code) {
-        ExceptionDetail exceptionDetail = constructExceptionDetail(code, request.getRequestURI(), e);
+        ExceptionDetail exceptionDetail = ExceptionDetail.constructExceptionDetail(code, request.getRequestURI(), e);
         return new ResponseEntity<>(exceptionDetail, HttpStatus.BAD_REQUEST);
-    }
-
-    private ExceptionDetail constructExceptionDetail(String code, String uri, Exception e) {
-        logger.error(getStackTrace(e));
-        ExceptionDetail exceptionDetail = new ExceptionDetail();
-        exceptionDetail.setCoode(code);
-        String message = null != e.getMessage() ? e.getMessage() : "";
-        if (StringUtils.isBlank(message)) {
-            message = e.getClass().getName();
-        }
-        switch (code) {
-            case BUSINESS_EXCEPTION:
-                break;
-            default:
-                message="未知异常【"+ message +"】";
-        }
-        exceptionDetail.setStackMessage(getStackTrace(e));
-        exceptionDetail.setMessage(message);
-        exceptionDetail.setPath(uri);
-        exceptionDetail.setException(e.getClass().getName());
-        return exceptionDetail;
-    }
-
-    private String getStackTrace(Throwable t) {
-        if (null == t) {
-            return "";
-        }
-        StringWriter sw = new StringWriter();
-        PrintWriter pw = new PrintWriter(sw);
-        try {
-            t.printStackTrace(pw);
-            return sw.toString();
-        } finally {
-            pw.close();
-            try {
-                sw.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }

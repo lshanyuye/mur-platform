@@ -32,7 +32,7 @@ public class LoginService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userService.findByUsername(username);
         if (user == null) {
-            return null;
+            throw new UsernameNotFoundException("帐号不存在");
         }
         return new UserDetails() {
             @Override
@@ -53,22 +53,22 @@ public class LoginService implements UserDetailsService {
             @Override
             public boolean isAccountNonExpired() {
                 if (user.getExpiredDate() != null) {
-                    return DateUtils.truncatedCompareTo(user.getExpiredDate(), new Date(), Calendar.DATE) > 0;
+                    return DateUtils.truncatedCompareTo(user.getExpiredDate(), new Date(), Calendar.DATE) < 1;
                 }
-                return false;
+                return true;
             }
 
             @Override
             public boolean isAccountNonLocked() {
-                return false;
+                return true;
             }
 
             @Override
             public boolean isCredentialsNonExpired() {
                 if (user.getCredentialExpiredDate() != null) {
-                    return DateUtils.truncatedCompareTo(user.getCredentialExpiredDate(), new Date(), Calendar.DATE) > 0;
+                    return DateUtils.truncatedCompareTo(user.getCredentialExpiredDate(), new Date(), Calendar.DATE) < 1;
                 }
-                return false;
+                return true;
             }
 
             @Override

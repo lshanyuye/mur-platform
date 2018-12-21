@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%level] [%logger{36}] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="RollingAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/opt/service/logs/oms-service/oms-service.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%level] [%logger{36}] - %msg%n
+            </Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/opt/service/logs/oms-service/oms-service_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>100</maxHistory> <!-- 保留天数 -->
+            <totalSizeCap>100MB</totalSizeCap> <!-- 文件超过上限会以序号命名拆分文件 -->
+        </rollingPolicy>
+    </appender>
+
+    <springProfile name="dev">
+        <root level="info">
+            <appender-ref ref="ConsoleAppender"/>
+        </root>
+        <logger name="com.mur" level="debug" additivity="false">
+            <appender-ref ref="ConsoleAppender"/>
+        </logger>
+    </springProfile>
+</configuration>

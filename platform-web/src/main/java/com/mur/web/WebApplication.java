@@ -6,18 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 
-/**
- * @ClassName WebApplication
- * @Description TODO
- * @Author Administrator
- * @Date 2018/12/13 10:32
- **/
+/** @ClassName WebApplication @Description TODO @Author Administrator @Date 2018/12/13 10:32 */
 @SpringBootApplication
 @EnableConfigurationProperties
 @MapperScan(basePackages = {"com.mur.platform.**.mapper"})
-@ComponentScan(basePackages = {"com.mur.platform", "com.mur.web"})
+@ComponentScan(basePackages = {"com.mur.platform", "com.mur.web", "com.mur.utils"})
 public class WebApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(WebApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(WebApplication.class, args);
+  }
 }

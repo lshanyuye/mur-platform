@@ -46,10 +46,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * 忽略静态文件
      */
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/v2/api-docs","*/swagger-resources/**","/swagger-ui.html","/webjars/**","/ajaxLogin","/page/**");
-    }
+//    @Override
+//    public void configure(WebSecurity web) throws Exception {
+//        web.ignoring().antMatchers("/v2/api-docs","*/swagger-resources/**","/swagger-ui.html","/webjars/**","/ajaxLogin","/page/**");
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -57,11 +57,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable()
                 .authorizeRequests()
-//                .antMatchers("/ajaxLogin", "/page/**", "/swagger-ui.html","/webjars/**").permitAll()
-//                .anyRequest().authenticated()
+                .antMatchers("/ajaxLogin", "/page/**", "/swagger-ui.html","/webjars/**").permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
+                .loginPage("/loginPage")
                 .loginProcessingUrl("/ajaxLogin")
                 .usernameParameter("username")
                 .passwordParameter("password")

@@ -13,4 +13,7 @@ import com.mur.service.base.BaseService;
  */
 public interface PositionService extends BaseService<Position> {
 
+    void save(Position position, String operator);
+
+    Position findByCode(String posCode);
 }

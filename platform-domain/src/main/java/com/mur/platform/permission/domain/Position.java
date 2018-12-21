@@ -31,7 +31,7 @@ public class Position extends Domain {
      * 是否有效
      */
     @TableField("ENABLED")
-    private String enabled;
+    private Boolean enabled;
 
 
     public String getPosCode() {
@@ -50,11 +50,11 @@ public class Position extends Domain {
         this.posName = posName;
     }
 
-    public String getEnabled() {
+    public Boolean getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(String enabled) {
+    public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 
