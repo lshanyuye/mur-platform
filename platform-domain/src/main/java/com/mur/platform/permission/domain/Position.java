@@ -1,5 +1,6 @@
 package com.mur.platform.permission.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.mur.domain.Domain;
 import com.baomidou.mybatisplus.annotation.TableField;
 
@@ -9,8 +10,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * </p>
  *
  * @author Mu.R
- * @since 2018-12-17
+ * @since 2018-12-22
  */
+@TableName("plat_position")
 public class Position extends Domain {
 
     private static final long serialVersionUID = 1L;
@@ -31,7 +33,7 @@ public class Position extends Domain {
      * 是否有效
      */
     @TableField("ENABLED")
-    private Boolean enabled;
+    private String enabled;
 
 
     public String getPosCode() {
@@ -50,11 +52,11 @@ public class Position extends Domain {
         this.posName = posName;
     }
 
-    public Boolean getEnabled() {
+    public String getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(Boolean enabled) {
+    public void setEnabled(String enabled) {
         this.enabled = enabled;
     }
 

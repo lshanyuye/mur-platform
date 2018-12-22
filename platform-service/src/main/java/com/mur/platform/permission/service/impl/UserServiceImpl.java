@@ -1,16 +1,14 @@
-package com.mur.platform.security.service.impl;
+package com.mur.platform.permission.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.mur.exception.BusinessException;
-import com.mur.platform.security.domain.User;
-import com.mur.platform.security.mapper.UserMapper;
-import com.mur.platform.security.service.UserService;
+import com.mur.platform.permission.domain.User;
+import com.mur.platform.permission.mapper.UserMapper;
+import com.mur.platform.permission.service.UserService;
 import com.mur.service.base.impl.BaseServiceImpl;
+import javax.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-
 import org.springframework.util.DigestUtils;
 
 /**
@@ -40,7 +38,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         if (user.isNew()) {
             user.setPassword(DigestUtils.md5DigestAsHex("111111".toString().getBytes()));
             if (user.getEnabled() == null) {
-                user.setEnabled(Boolean.FALSE);
+                user.setEnabled("1");
             }
         }
         saveOrUpdate(user, operator);

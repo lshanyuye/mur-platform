@@ -1,6 +1,6 @@
-package com.mur.platform.security.service;
+package com.mur.platform.permission.service;
 
-import com.mur.platform.security.domain.User;
+import com.mur.platform.permission.domain.User;
 import com.mur.service.base.BaseService;
 
 /**

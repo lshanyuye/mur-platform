@@ -1,5 +1,6 @@
 package com.mur.platform.permission.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.mur.domain.Domain;
 import com.baomidou.mybatisplus.annotation.TableField;
 
@@ -9,8 +10,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * </p>
  *
  * @author Mu.R
- * @since 2018-12-17
+ * @since 2018-12-22
  */
+@TableName("plat_role")
 public class Role extends Domain {
 
     private static final long serialVersionUID = 1L;

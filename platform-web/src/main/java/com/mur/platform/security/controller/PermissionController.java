@@ -2,7 +2,7 @@ package com.mur.platform.security.controller;
 
 import com.mur.domain.web.Result;
 import com.mur.domain.web.UserProfile;
-import com.mur.platform.security.service.ProfileService;
+import com.mur.platform.permission.service.ProfileService;
 import com.mur.web.constants.WebConstants;
 import com.mur.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;

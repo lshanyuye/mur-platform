@@ -1,10 +1,12 @@
 package com.mur.utils;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javax.swing.Spring;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 /** @ClassName SpringUtils @Description TODO @Author Administrator @Date 2018/12/20 15:28 */
@@ -33,5 +35,13 @@ public class SpringUtils implements ApplicationContextAware {
 
   public <T> T getBean(Class<T> tClass) {
     return acx.getBean(tClass);
+  }
+
+  public static Resource getResource(String path) {
+    return acx.getResource(path);
+  }
+
+  public static Resource[] getResources(String path) throws IOException {
+    return acx.getResources(path);
   }
 }

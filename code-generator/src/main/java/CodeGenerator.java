@@ -39,6 +39,7 @@ public class CodeGenerator {
     private static String controllerPath = "/platform-web";
     private static String tablePrefix = "plat_";
 
+
     /**
      * <p> 读取控制台内容 </p>
      */

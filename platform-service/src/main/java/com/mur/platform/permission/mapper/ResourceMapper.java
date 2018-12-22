@@ -1,16 +1,16 @@
 package com.mur.platform.permission.mapper;
 
-import com.mur.platform.permission.domain.Role;
+import com.mur.platform.permission.domain.Resources;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
- * 角色 Mapper 接口
+ * 资源管理 Mapper 接口
  * </p>
  *
  * @author Mu.R
  * @since 2018-12-22
  */
-public interface RoleMapper extends BaseMapper<Role> {
+public interface ResourceMapper extends BaseMapper<Resources> {
 
 }

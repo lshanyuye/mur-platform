@@ -1,20 +1,17 @@
 package com.mur.web.security;
 
+import com.mur.platform.permission.domain.User;
+import com.mur.platform.permission.service.UserService;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-
-import com.mur.platform.security.domain.User;
-import com.mur.platform.security.service.UserService;
+import javax.annotation.Resource;
 import org.apache.commons.lang3.time.DateUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * @ClassName UserService
@@ -73,7 +70,7 @@ public class LoginService implements UserDetailsService {
 
             @Override
             public boolean isEnabled() {
-                return user.getEnabled();
+                return "1".equals(user.getEnabled());
             }
         };
     }

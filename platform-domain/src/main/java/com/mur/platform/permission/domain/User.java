@@ -1,8 +1,7 @@
-package com.mur.platform.security.domain;
+package com.mur.platform.permission.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mur.domain.Domain;
 import com.baomidou.mybatisplus.annotation.TableField;
 
@@ -12,8 +11,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * </p>
  *
  * @author Mu.R
- * @since 2018-12-15
+ * @since 2018-12-22
  */
+@TableName("plat_user")
 public class User extends Domain {
 
     private static final long serialVersionUID = 1L;
@@ -46,12 +46,11 @@ public class User extends Domain {
      * 是否有效
      */
     @TableField("ENABLED")
-    private Boolean enabled;
+    private String enabled;
 
     /**
      * 失效日期
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @TableField("EXPIRED_DATE")
     private Date expiredDate;
 
@@ -59,7 +58,6 @@ public class User extends Domain {
      * 密码失效日期
      */
     @TableField("CREDENTIAL_EXPIRED_DATE")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date credentialExpiredDate;
 
 
@@ -95,11 +93,11 @@ public class User extends Domain {
         this.relationType = relationType;
     }
 
-    public Boolean getEnabled() {
+    public String getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(Boolean enabled) {
+    public void setEnabled(String enabled) {
         this.enabled = enabled;
     }
 

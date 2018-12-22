@@ -1,10 +1,7 @@
 package com.mur.web.security;
 
 import com.mur.domain.web.UserProfile;
-import com.mur.platform.security.domain.User;
-import com.mur.platform.security.service.ProfileService;
-import com.mur.utils.SpringUtils;
-import com.mur.web.WebApplication;
+import com.mur.platform.permission.service.ProfileService;
 import com.mur.web.constants.WebConstants;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -15,7 +12,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;

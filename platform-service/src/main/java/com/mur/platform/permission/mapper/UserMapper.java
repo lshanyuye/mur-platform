@@ -1,6 +1,6 @@
-package com.mur.platform.security.mapper;
+package com.mur.platform.permission.mapper;
 
-import com.mur.platform.security.domain.User;
+import com.mur.platform.permission.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author Mu.R
- * @since 2018-12-15
+ * @since 2018-12-22
  */
 public interface UserMapper extends BaseMapper<User> {
 

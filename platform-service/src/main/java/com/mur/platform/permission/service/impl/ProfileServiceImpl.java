@@ -1,9 +1,9 @@
-package com.mur.platform.security.service.impl;
+package com.mur.platform.permission.service.impl;
 
 import com.mur.domain.web.UserProfile;
-import com.mur.platform.security.domain.User;
-import com.mur.platform.security.service.ProfileService;
-import com.mur.platform.security.service.UserService;
+import com.mur.platform.permission.domain.User;
+import com.mur.platform.permission.service.ProfileService;
+import com.mur.platform.permission.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

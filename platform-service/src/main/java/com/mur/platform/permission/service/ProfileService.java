@@ -1,4 +1,4 @@
-package com.mur.platform.security.service;
+package com.mur.platform.permission.service;
 
 import com.mur.domain.web.UserProfile;
 
