@@ -29,7 +29,7 @@ public class PositionServiceImpl extends BaseServiceImpl<Position> implements Po
       throw new BusinessException("岗位名称不能为空");
     }
     if (position.isNew() && position.getEnabled() == null) {
-      position.setEnabled("1");
+      position.setEnabled(Boolean.TRUE);
     }
     Position existed = findByCode(position.getPosCode());
     if (existed != null && !existed.getId().equals(position.getId())) {

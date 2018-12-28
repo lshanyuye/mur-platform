@@ -39,7 +39,7 @@ public class Resources extends Domain {
      * 是否有效
      */
     @TableField("ENABLED")
-    private String enabled;
+    private Boolean enabled;
 
     /**
      * 资源类型
@@ -58,6 +58,11 @@ public class Resources extends Domain {
      */
     @TableField("P_RESOURCE_CODE")
     private String pResourceCode;
+
+    /**
+     * 顺序号
+     */
+    private Integer orderBy;
 
 
     public String getResourceCode() {
@@ -84,11 +89,11 @@ public class Resources extends Domain {
         this.url = url;
     }
 
-    public String getEnabled() {
+    public Boolean getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(String enabled) {
+    public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 
@@ -114,5 +119,17 @@ public class Resources extends Domain {
 
     public void setpResourceCode(String pResourceCode) {
         this.pResourceCode = pResourceCode;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Integer getOrderBy() {
+        return orderBy;
+    }
+
+    public void setOrderBy(Integer orderBy) {
+        this.orderBy = orderBy;
     }
 }

@@ -1,5 +1,6 @@
 package com.mur.domain;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -15,7 +16,8 @@ import org.apache.commons.lang3.StringUtils;
  * @Date 2018/12/13 10:56
  **/
 public class Domain implements Serializable{
-    @TableId
+
+    @TableId(type = IdType.UUID)
     private String id;
 
     @TableField("CREATED_BY")
@@ -75,5 +77,15 @@ public class Domain implements Serializable{
     @JsonIgnore
     public Boolean isNew(){
         return StringUtils.isBlank(this.id);
+    }
+
+    public void fillOperator(String operator) {
+        if (this.isNew()) {
+            this.setCreatedTime(new Date());
+            this.setCreatedBy(operator);
+        } else {
+            this.setModifiedBy(operator);
+            this.setModifiedTime(new Date());
+        }
     }
 }

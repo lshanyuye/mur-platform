@@ -38,7 +38,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         if (user.isNew()) {
             user.setPassword(DigestUtils.md5DigestAsHex("111111".toString().getBytes()));
             if (user.getEnabled() == null) {
-                user.setEnabled("1");
+                user.setEnabled(Boolean.TRUE);
             }
         }
         saveOrUpdate(user, operator);

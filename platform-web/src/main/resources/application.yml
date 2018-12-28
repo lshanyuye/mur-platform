@@ -17,6 +17,8 @@ mybatis-plus:
 
 ---
 #开发环境
+application:
+  refreshMenu: true
 server:
   port: 8088
 spring:

@@ -1,11 +1,9 @@
 package com.mur.menu;
 
 import com.mur.platform.menus.builder.MenuBuilder;
-import com.mur.web.WebApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -15,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @Date 2018/12/22 11:18
  **/
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WebApplication.class)
+//@SpringBootTest(classes = WebApplication.class)
 public class BuildMenuBeanTest {
 
     @Autowired

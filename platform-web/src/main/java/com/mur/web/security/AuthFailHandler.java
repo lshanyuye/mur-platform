@@ -19,7 +19,12 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 
-/** @ClassName AuthFailHandler @Description TODO @Author Administrator @Date 2018/12/15 15:47 */
+/**
+ * @ClassName AuthFailHandler
+ * @Description 222
+ * @Author Administrator
+ * @Date 2018/12/15 15:47
+ */
 public class AuthFailHandler extends SimpleUrlAuthenticationFailureHandler {
 
   private static Logger logger = LoggerFactory.getLogger(AuthFailHandler.class);

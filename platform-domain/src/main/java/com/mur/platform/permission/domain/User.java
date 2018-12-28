@@ -46,7 +46,7 @@ public class User extends Domain {
      * 是否有效
      */
     @TableField("ENABLED")
-    private String enabled;
+    private Boolean enabled;
 
     /**
      * 失效日期
@@ -93,11 +93,11 @@ public class User extends Domain {
         this.relationType = relationType;
     }
 
-    public String getEnabled() {
+    public Boolean getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(String enabled) {
+    public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 

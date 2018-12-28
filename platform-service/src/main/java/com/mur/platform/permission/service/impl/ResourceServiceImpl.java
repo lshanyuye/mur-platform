@@ -26,6 +26,5 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resources> implements R
     public void resetResources(List<Resources> resources) {
         this.remove(new QueryWrapper<Resources>());
         this.saveOrUpdateBatch(resources);
-//        this.saveBatch(resources);
     }
 }
